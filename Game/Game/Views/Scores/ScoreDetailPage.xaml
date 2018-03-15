@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.ScoreDetailPage"
+             Title="{Binding Title}">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="Edit_Clicked" />
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" />
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+
+        <StackLayout Spacing="20" Padding="15">
+
+            <Label Text="Score Detail Page" FontSize="Medium" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Score:" Style="{StaticResource LabelLeft}" />
+                <Label Text="{Binding Data.ScoreTotal}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Game Date:"  />
+                <Label Text="{Binding Data.GameDate}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AutoBattle:"  />
+                <Label Text="{Binding Data.AutoBattle}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Rounds:"  />
+                <Label Text="{Binding Data.RoundCount}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Turns:"  />
+                <Label Text="{Binding Data.TurnCount}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Monsters Slain:"  />
+                <Label Text="{Binding Data.MonsterSlainNumber}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Total Experience Gained:"  />
+                <Label Text="{Binding Data.ExperienceGainedTotal}" Style="{StaticResource LabelRight}" />
+            </StackLayout>
+
+
+            <Label Text="Characters at Death:"  />
+            <Label Text="{Binding Data.CharacterAtDeathList}" Style="{StaticResource LabelLeft}" />
+
+            <Label Text="Monsters Killed:"  />
+            <Label Text="{Binding Data.MonstersKilledList}" Style="{StaticResource LabelLeft}" />
+
+            <Label Text="Items Dropped:"  />
+            <Label Text="{Binding Data.ItemsDroppedList}" Style="{StaticResource LabelLeft}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
