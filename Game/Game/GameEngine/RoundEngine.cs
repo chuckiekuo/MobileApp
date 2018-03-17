@@ -9,6 +9,7 @@ using System.Diagnostics;
 
 namespace Game.GameEngine
 {
+    // Each round has its own item pool and list of monsters
     class RoundEngine : TurnEngine
     {
         // Hold the list of players (monster, and character by guid), and order by speed
@@ -22,6 +23,7 @@ namespace Game.GameEngine
             ClearLists();
         }
 
+        // Clears and initializes lists
         private void ClearLists()
         {
             ItemPool = new List<Item>();
@@ -127,7 +129,7 @@ namespace Game.GameEngine
         // Rember Who's Turn
 
         // RoundNextTurn
-        public RoundEnum RoundNextTurn()
+        public RoundEnum RoundNextTurn(string id = null)
         {
             // No characters, game is over...
             if (CharacterList.Count < 1)
@@ -155,7 +157,7 @@ namespace Game.GameEngine
                 var myPlayer = CharacterList.Where(a => a.Guid == PlayerCurrent.Guid).FirstOrDefault();
 
                 // Do the turn....
-                TakeTurn(myPlayer);
+                TakeTurn(myPlayer, id);
             }
             // Add Monster turn here...
             else if (PlayerCurrent.PlayerType == PlayerTypeEnum.Monster)
@@ -170,6 +172,7 @@ namespace Game.GameEngine
             return RoundEnum.NextTurn;
         }
 
+        // Gets next player's turn
         public PlayerInfo GetNextPlayerTurn()
         {
             // Recalculate Order
@@ -182,6 +185,7 @@ namespace Game.GameEngine
             return PlayerCurrent;
         }
 
+        // We order the player list by turn order
         public void OrderPlayerListByTurnOrder()
         {
             var myReturn = new List<PlayerInfo>();
@@ -205,6 +209,7 @@ namespace Game.GameEngine
                 .ToList();
         }
 
+        // Pulls a list of alive characters and monsters from the list
         private void MakePlayerList()
         {
             PlayerList = new List<PlayerInfo>();
@@ -244,6 +249,7 @@ namespace Game.GameEngine
             }
         }
 
+        // Grabs the next player up to bat
         public PlayerInfo GetNextPlayerInList()
         {
             // Walk the list from top to bottom
@@ -295,6 +301,7 @@ namespace Game.GameEngine
             GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
         }
 
+        // Replaces item in inventory with a better one
         public void GetItemFromPoolIfBetter(Character character, ItemLocationEnum setLocation)
         {
             var myList = ItemPool.Where(a => a.Location == setLocation)

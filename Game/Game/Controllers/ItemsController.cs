@@ -30,6 +30,10 @@ namespace Game.Controllers
         public static string DefaultImageURI = "Item.png";
 
         #region ServerCalls
+
+        // Passes in an iten group parameter to pull items from server
+        // GET
+
         public async void GetItemsFromServer(int parameter = 100)
         {
             // parameter is the item group to request.  1, 2, 3, 100
@@ -165,6 +169,7 @@ namespace Game.Controllers
 
         }
 
+        // Deserializes a Jobject into an Item to be placed into the ItemsViewModel dataset
         private Item ConvertFromJson(JObject json)
         {
             var myData = new Item();

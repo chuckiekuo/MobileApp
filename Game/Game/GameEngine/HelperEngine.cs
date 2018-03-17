@@ -7,6 +7,7 @@ namespace Game.GameEngine
     {
         private static Random rnd = new Random();
 
+        // Returns a random int with a number of rolls and a number of dice
         public static int RollDice (int rolls, int dice)
         {
             if (rolls < 1)

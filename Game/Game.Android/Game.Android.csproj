@@ -99,6 +99,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\item.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\conner.jpg" />
+  </ItemGroup>
   <Import Project="..\Game\Game.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

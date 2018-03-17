@@ -27,26 +27,26 @@
             Orientation="Vertical">
 
                     <Image 
-                Source="d20.png" 
+                Source="conner.jpg" 
                 VerticalOptions="Center" 
                 HeightRequest="150"
                 HorizontalOptions="Fill"/>
 
                     <Label 
                 FontSize="Large"
-                Text="Class Dungeon"
+                Text="Conner 2: Electric Connerloo: The CyberConner Edition Director's Cut"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
 
                     <Label 
                 FontSize="Medium"
-                Text="Mobile Development"
+                Text="Goodnight, sweet prince. May you fly as high as the seagulls."
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
 
                     <Label 
                 FontSize="Small"
-                Text="Mike Koenig"
+                Text="Love, Chuck and Erika. We need you back boo-boo"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
 

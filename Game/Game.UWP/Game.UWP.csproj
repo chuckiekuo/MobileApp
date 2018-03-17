@@ -105,6 +105,7 @@
     <None Include="Game.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="conner.jpg" />
     <Content Include="d20.png" />
     <Content Include="item.png" />
     <Content Include="Properties\Default.rd.xml" />

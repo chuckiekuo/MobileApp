@@ -10,7 +10,7 @@ namespace Game.GameEngine
 {
     // Battle is the top structure
 
-    // A battle has
+    // A battle has a score, a character list, and a list of items
 
     class BattleEngine : RoundEngine
     {
@@ -104,6 +104,7 @@ namespace Game.GameEngine
             return true;
         }
 
+        // Grabs a random character from the data store and puts it inbetween scale level min and max
         public Character GetRandomCharacter(int ScaleLevelMin, int ScaleLevelMax)
         {
             var myCharacterViewModel = CharactersViewModel.Instance;
@@ -130,6 +131,7 @@ namespace Game.GameEngine
             return myData;
         }
 
+        // Runs through auto battle until all characters are dead
         public bool AutoBattle()
         {
             // Auto Battle, does all the steps that a human would do.

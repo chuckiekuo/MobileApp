@@ -23,6 +23,7 @@ namespace Game.GameEngine
         // Holds the official score
         public Score BattleScore = new Score();
 
+        // Stores relevant turn information for output
         public string AttackerName = string.Empty;
         public string TargetName = string.Empty;
         public string AttackStatus = string.Empty;
@@ -50,17 +51,29 @@ namespace Game.GameEngine
         // Turn Over
 
         // Character Attacks...
-        public bool TakeTurn(Character Attacker)
+        public bool TakeTurn(Character Attacker, string id = null)
         {
             // Choose Move or Attack
 
             // For Attack, Choose Who
+            // If id is null, it is auto battle
+           
             var Target = AttackChoice(Attacker);
+            
 
-            // Do Attack
-            var AttackScore = Attacker.Level + Attacker.GetAttack();
-            var DefenseScore = Target.GetDefense() + Target.Level;
-            TurnAsAttack(Attacker, AttackScore, Target, DefenseScore);
+            if (id != null)
+            {
+                Target = MonsterList.FirstOrDefault(a => a.Guid == id);
+            }
+
+            if (Target != null)
+            {
+
+                // Do Attack
+                var AttackScore = Attacker.Level + Attacker.GetAttack();
+                var DefenseScore = Target.GetDefense() + Target.Level;
+                TurnAsAttack(Attacker, AttackScore, Target, DefenseScore);
+            }
 
             return true;
         }
@@ -297,6 +310,7 @@ namespace Game.GameEngine
             return true;
         }
 
+        // Uses helper engine to roll for hit success
         public HitStatusEnum RollToHitTarget(int AttackScore, int DefenseScore)
         {
 

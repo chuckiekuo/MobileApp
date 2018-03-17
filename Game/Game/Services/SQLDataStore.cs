@@ -74,35 +74,28 @@ namespace Game.Services
 
         private async void InitilizeSeedData()
         {
+            // Use POST to get items at beginning
+            
+            await AddAsync_Character(new Character { Name = "McLovin", Description="This is an Character description.", Level = 1 });
+            await AddAsync_Character(new Character { Name = "Ryan Gosling", Description="This is an Character description." , Level = 1});
+            await AddAsync_Character(new Character { Name = "Cyber Fr. Steve", Description="This is an Character description." , Level = 2});
+            await AddAsync_Character(new Character { Name = "Futureman", Description="This is an Character description." , Level = 2});
+            await AddAsync_Character(new Character { Name = "Conner Abandoned Us", Description="This is an Character description." , Level = 3});
+            await AddAsync_Character(new Character { Name = "Conner, I have abandonment issues.", Description="This is an Character description." , Level = 3});
 
-            await AddAsync_Item(new Item { Name = "First item", Description = "This is an item description." });
-            await AddAsync_Item(new Item { Name = "Second item", Description = "This is an item description." });
-            await AddAsync_Item(new Item { Name = "Third item", Description = "This is an item description." });
-            await AddAsync_Item(new Item { Name = "Fourth item", Description = "This is an item description." });
-            await AddAsync_Item(new Item { Name = "Fifth item", Description = "This is an item description." });
-            await AddAsync_Item(new Item { Name = "Sixth item", Description = "This is an item description." });
+            await AddAsync_Monster(new Monster { Name = "Conner, come back", Description="This is an Monster description." });
+            await AddAsync_Monster(new Monster { Name = "Conner, you complete me", Description="This is an Monster description." });
+            await AddAsync_Monster(new Monster { Name = "Conner why have you forsaken me", Description="This is an Monster description." });
+            await AddAsync_Monster(new Monster { Name = "I thought 'I do' meant foever, Conner", Description="This is an Monster description." });
+            await AddAsync_Monster(new Monster { Name = "Conner, when do you get back?", Description="This is an Monster description." });
+            await AddAsync_Monster(new Monster { Name = "Conner, will you go to senior prom with me?", Description="This is an Monster description." });
 
-
-            await AddAsync_Character(new Character { Name = "First Character", Description="This is an Character description.", Level = 1 });
-            await AddAsync_Character(new Character { Name = "Second Character", Description="This is an Character description." , Level = 1});
-            await AddAsync_Character(new Character { Name = "Third Character", Description="This is an Character description." , Level = 2});
-            await AddAsync_Character(new Character { Name = "Fourth Character", Description="This is an Character description." , Level = 2});
-            await AddAsync_Character(new Character { Name = "Fifth Character", Description="This is an Character description." , Level = 3});
-            await AddAsync_Character(new Character { Name = "Sixth Character", Description="This is an Character description." , Level = 3});
-
-            await AddAsync_Monster(new Monster { Name = "First Monster", Description="This is an Monster description." });
-            await AddAsync_Monster(new Monster { Name = "Second Monster", Description="This is an Monster description." });
-            await AddAsync_Monster(new Monster { Name = "Third Monster", Description="This is an Monster description." });
-            await AddAsync_Monster(new Monster { Name = "Fourth Monster", Description="This is an Monster description." });
-            await AddAsync_Monster(new Monster { Name = "Fifth Monster", Description="This is an Monster description." });
-            await AddAsync_Monster(new Monster { Name = "Sixth Monster", Description="This is an Monster description." });
-
-            await AddAsync_Score(new Score { Name = "First Score", ScoreTotal= 111});
-            await AddAsync_Score(new Score { Name = "Second Score", ScoreTotal= 222 });
-            await AddAsync_Score(new Score { Name = "Third Score", ScoreTotal= 333});
-            await AddAsync_Score(new Score { Name = "Fourth Score", ScoreTotal = 444 });
-            await AddAsync_Score(new Score { Name = "Fifth Score", ScoreTotal = 555 });
-            await AddAsync_Score(new Score { Name = "Sixth Score", ScoreTotal = 666 });
+            await AddAsync_Score(new Score { Name = "Conner", ScoreTotal= 111});
+            await AddAsync_Score(new Score { Name = "Because", ScoreTotal= 222 });
+            await AddAsync_Score(new Score { Name = "He's", ScoreTotal= 333});
+            await AddAsync_Score(new Score { Name = "My", ScoreTotal = 444 });
+            await AddAsync_Score(new Score { Name = "Number", ScoreTotal = 555 });
+            await AddAsync_Score(new Score { Name = "One", ScoreTotal = 666 });
 
         }
 
