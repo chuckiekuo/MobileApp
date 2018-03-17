@@ -18,8 +18,10 @@ namespace Game.Views.Battle
 	{
 		public ManualBattlePage ()
 		{
-			InitializeComponent ();
             var myBattleEngine = new BattleEngine();
+            myBattleEngine.AddCharactersToBattle();
+            BindingContext = myBattleEngine.CharacterList;
+            InitializeComponent();
         }
 
         private async void ManualBattleButton_Command(object sender, EventArgs e)

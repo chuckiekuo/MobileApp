@@ -15,14 +15,20 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
 
-                <Label Text="Battle Modes"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
-                <Button Text="Manual Battle"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                Clicked="ManualBattleButton_Command"/>
+                <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{Binding .}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" />
+                                        <Label Text="{Binding Alive}" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
             </StackLayout>
         </StackLayout>
