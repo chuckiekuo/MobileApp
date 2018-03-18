@@ -4,33 +4,32 @@
              x:Class="Game.Views.Battle.ManualBattlePage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout 
-            HorizontalOptions="Center" 
-            VerticalOptions="Start"
-            Orientation="Vertical">
+                <Label Text="Battle List Page" FontSize="Small" />
 
-                <Label 
-                FontSize="Large"
-                Text="戦闘開始！"
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand" />
-
-                <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{Binding .}">
+                <ListView x:Name="ItemsListView" 
+                          ItemsSource="{Binding PlayerList}"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="true"
+                          IsPullToRefreshEnabled="true"
+                          CachingStrategy="RecycleElement"
+                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout>
-                                        <Label Text="{Binding Name}" />
-                                        <Label Text="{Binding Alive}" />
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" 
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="12" />
+                                    <Label Text="{Binding PlayerType}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
                                     </StackLayout>
-                                </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+        </ContentPage.Content>
 </ContentPage>

@@ -18,7 +18,7 @@ namespace Game.GameEngine
     // * Manage Round...
     // * /
 
-    class TurnEngine
+    public class TurnEngine
     {
         // Holds the official score
         public Score BattleScore = new Score();

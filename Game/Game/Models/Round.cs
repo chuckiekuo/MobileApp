@@ -23,30 +23,30 @@ namespace Game.Models
     public class PlayerInfo
     {
         // TurnOrder
-        public int Order;
+        public int Order { get; set; }
 
         // guid of the original data it links back to
-        public string Guid;
+        public string Guid { get; set; }
 
         // alive status, !alive will be removed from the list
-        public bool Alive;
+        public bool Alive { get; set; }
 
         // Sorting Order is :  Speed, Level, ExperiencePoints, PlayerType, Name, ListOrder
 
         // Total speed, including level and items
-        public int Speed;
+        public int Speed { get; set; }
 
         // Level of character or monster
-        public int Level;
+        public int Level { get; set; }
 
         // The experience points the player has used in sorting ties...
-        public int ExperiencePoints;
+        public int ExperiencePoints { get; set; }
 
         // The type of player, character comes before monster
-        public PlayerTypeEnum PlayerType;
+        public PlayerTypeEnum PlayerType { get; set; }
 
         // Sorting on the alpha name if needed
-        public string Name;
+        public string Name { get; set; }
 
         // Finally if all of the above are the same, sort based on who was loaded first into the list...
         public int ListOrder;

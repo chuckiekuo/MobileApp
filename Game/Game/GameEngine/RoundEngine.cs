@@ -10,11 +10,10 @@ using System.Diagnostics;
 namespace Game.GameEngine
 {
     // Each round has its own item pool and list of monsters
-    class RoundEngine : TurnEngine
+    public class RoundEngine : TurnEngine
     {
         // Hold the list of players (monster, and character by guid), and order by speed
-        public List<PlayerInfo> PlayerList;
-
+        public List<PlayerInfo> PlayerList { get; set; }
         // Player currently engaged
         public PlayerInfo PlayerCurrent;
 

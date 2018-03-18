@@ -12,8 +12,9 @@ namespace Game.GameEngine
 
     // A battle has a score, a character list, and a list of items
 
-    class BattleEngine : RoundEngine
+   public class BattleEngine : RoundEngine
     {
+
         // The status of the actual battle, running or not (over)
         private bool isBattleRunning = false;
 
