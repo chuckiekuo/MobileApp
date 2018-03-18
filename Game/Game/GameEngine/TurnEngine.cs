@@ -74,6 +74,10 @@ namespace Game.GameEngine
                 var DefenseScore = Target.GetDefense() + Target.Level;
                 TurnAsAttack(Attacker, AttackScore, Target, DefenseScore);
             }
+            else
+            {
+                return false;
+            }
 
             return true;
         }
