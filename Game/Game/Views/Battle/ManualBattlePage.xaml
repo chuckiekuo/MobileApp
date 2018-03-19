@@ -2,14 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Game.Views.Battle.ManualBattlePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Next Turn" Clicked="BattleEngineStart_Command" />
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+       
+<StackLayout>
                 <Label Text="Battle List Page" FontSize="Small" />
 
                 <ListView x:Name="ItemsListView" 
                           ItemsSource="{Binding PlayerList}"
                           VerticalOptions="FillAndExpand"
                           HasUnevenRows="true"
+                          RefreshCommand="{Binding LoadItemsCommand}"
                           IsPullToRefreshEnabled="true"
                           CachingStrategy="RecycleElement"
                           >
@@ -25,7 +31,7 @@
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
                                            FontSize="13" />
-                                    </StackLayout>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

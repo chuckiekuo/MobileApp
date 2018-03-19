@@ -14,9 +14,11 @@ namespace Game.Views
 	{
 		public OpeningPage ()
 		{
+		    
 			InitializeComponent ();
 		}
 
+	    
         private async void AutoBattleButton_Command(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AutoBattlePage());

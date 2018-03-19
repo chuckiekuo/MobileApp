@@ -37,6 +37,8 @@
                 HorizontalOptions="CenterAndExpand" 
                     Clicked="ManualBattleButton_Command"/>
             </StackLayout>
+
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

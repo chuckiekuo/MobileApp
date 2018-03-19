@@ -48,6 +48,10 @@ namespace Game.Models
         // Sorting on the alpha name if needed
         public string Name { get; set; }
 
+        public string MaxHP { get; set; }
+
+        public string CurrentHP { get; set; }
+
         // Finally if all of the above are the same, sort based on who was loaded first into the list...
         public int ListOrder;
 
@@ -66,6 +70,8 @@ namespace Game.Models
             ExperiencePoints = data.ExperienceTotal;
             Level = data.Level;
             Name = data.Name;
+            CurrentHP = data.GetHealthCurrent().ToString();
+            MaxHP = data.GetHealthMax().ToString();
             Speed = data.GetSpeed();
         }
 
@@ -78,6 +84,8 @@ namespace Game.Models
             ExperiencePoints = data.ExperienceTotal;
             Level = data.Level;
             Name = data.Name;
+            CurrentHP = data.GetHealthCurrent().ToString();
+            MaxHP = data.GetHealthMax().ToString();
             Speed = data.GetSpeed();
         }
     }

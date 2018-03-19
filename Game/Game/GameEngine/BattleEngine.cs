@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-
+using System.Threading.Tasks;
 using Game.Models;
 using Game.ViewModels;
+using Xamarin.Forms;
 
 namespace Game.GameEngine
 {
@@ -13,8 +14,7 @@ namespace Game.GameEngine
     // A battle has a score, a character list, and a list of items
 
    public class BattleEngine : RoundEngine
-    {
-
+   {
         // The status of the actual battle, running or not (over)
         private bool isBattleRunning = false;
 
@@ -199,6 +199,25 @@ namespace Game.GameEngine
         // Choose Attack Order
         // Walk Attack Order
         // Take Turn A attacks B
+
+        // Check Character List, if empty battle over
+        // Check Monster List, if empty Round Over, then New Round
+
+        // Round Over
+        // Clear Monsters
+        // Drop Items to Pool
+        // Allow Pickup of Items from Pool
+
+        // New Round
+        // Item pool is empty
+        // Monster List is new
+        // Start Round
+
+        // Start Round
+        // Choose Attack Order
+        // Walk Attack Order
+        // Take Turn A attacks B
+
 
     }
 }

@@ -44,5 +44,6 @@ namespace Game.Models
         // Debug Settings
         public static bool EnableCriticalMissProblems = true;
         public static bool EnableCriticalHitDamage = true;
+        public static bool EnableUI = false;
     }
 }

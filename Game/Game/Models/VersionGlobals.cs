@@ -37,5 +37,7 @@ namespace Game.Models
         {
             return "Version: " + GetCodeVersion() + " Data: " + GetDataVersion();
         }
+
+        public static bool Debug { get; }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using Game.Models;
 using Game.ViewModels;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace Game.GameEngine
 {
@@ -14,6 +15,8 @@ namespace Game.GameEngine
     {
         // Hold the list of players (monster, and character by guid), and order by speed
         public List<PlayerInfo> PlayerList { get; set; }
+
+        public List<PlayerInfo> DisplayList { get; set; }
         // Player currently engaged
         public PlayerInfo PlayerCurrent;
 
@@ -52,10 +55,13 @@ namespace Game.GameEngine
 
             // Make the PlayerList
             MakePlayerList();
+            
 
             // Update Score for the RoundCount
             BattleScore.RoundCount++;
         }
+
+      
 
         // Add Monsters
         // Scale them to meet Character Strength...
@@ -207,6 +213,7 @@ namespace Game.GameEngine
                 .ThenBy(a => a.ListOrder)
                 .ToList();
         }
+
 
         // Pulls a list of alive characters and monsters from the list
         private void MakePlayerList()
